@@ -1,0 +1,11 @@
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+--------- DOESN'T WAIT
+BEGIN TRANSACTION
+
+SELECT * FROM 
+	[AdventureWorks2019].[Person].[Person]
+WHERE 
+	[FirstName] = 'Ken';
+
+ROLLBACK;
